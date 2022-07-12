@@ -10,7 +10,7 @@ export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router:Router, private alertify: AlertifyService){}
   canActivate(): boolean {
     if(!this.authService.loggedIn()){
-      this.alertify.error("You're not authorized to access this page");
+      this.alertify.error("You're not authorized to access this page.");
       this.router.navigate(['/home']);
       return false;
     }
